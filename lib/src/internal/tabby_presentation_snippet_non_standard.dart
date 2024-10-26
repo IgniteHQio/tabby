@@ -21,12 +21,10 @@ class TabbyPresentationSnippetNonStantard extends StatefulWidget {
   final Color textColor;
 
   @override
-  State<TabbyPresentationSnippetNonStantard> createState() =>
-      _TabbyPresentationSnippetNonStantardState();
+  State<TabbyPresentationSnippetNonStantard> createState() => _TabbyPresentationSnippetNonStantardState();
 }
 
-class _TabbyPresentationSnippetNonStantardState
-    extends State<TabbyPresentationSnippetNonStantard> {
+class _TabbyPresentationSnippetNonStantardState extends State<TabbyPresentationSnippetNonStantard> {
   late List<String> localStrings;
   late final TabbyChromeSafariBrowser _browser;
 
@@ -61,13 +59,12 @@ class _TabbyPresentationSnippetNonStantardState
       ),
     );
     _browser.open(
-      url: Uri.parse(
+      url: WebUri(
         '${snippetWebUrls[widget.lang]}'
         '?currency=${widget.currency.displayName}$sdkQuery&installmentsCount=0',
       ),
       options: ChromeSafariBrowserClassOptions(
-        android: AndroidChromeCustomTabsOptions(
-            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+        android: AndroidChromeCustomTabsOptions(shareState: CustomTabsShareState.SHARE_STATE_OFF),
         ios: IOSSafariOptions(
           presentationStyle: IOSUIModalPresentationStyle.POPOVER,
         ),

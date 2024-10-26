@@ -69,10 +69,9 @@ class _TabbyWebViewState extends State<TabbyWebView> {
         Expanded(
           child: InAppWebView(
             key: webViewKey,
-            initialUrlRequest: URLRequest(url: Uri.parse(widget.webUrl)),
+            initialUrlRequest: URLRequest(url: WebUri(widget.webUrl)),
             initialOptions: options,
-            onProgressChanged:
-                (InAppWebViewController controller, int progress) {
+            onProgressChanged: (InAppWebViewController controller, int progress) {
               setState(() {
                 _progress = progress / 100;
               });
@@ -87,8 +86,7 @@ class _TabbyWebViewState extends State<TabbyWebView> {
             onWebViewCreated: (controller) async {
               controller.addJavaScriptHandler(
                 handlerName: 'tabbyMobileSDK',
-                callback: (message) =>
-                    javaScriptHandler(message, widget.onResult),
+                callback: (message) => javaScriptHandler(message, widget.onResult),
               );
             },
           ),

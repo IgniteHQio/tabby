@@ -25,8 +25,7 @@ class TabbyPresentationSnippet extends StatefulWidget {
   final Color textColor;
 
   @override
-  State<TabbyPresentationSnippet> createState() =>
-      _TabbyPresentationSnippetState();
+  State<TabbyPresentationSnippet> createState() => _TabbyPresentationSnippetState();
 }
 
 class _TabbyPresentationSnippetState extends State<TabbyPresentationSnippet> {
@@ -60,13 +59,12 @@ class _TabbyPresentationSnippetState extends State<TabbyPresentationSnippet> {
       ),
     );
     _browser.open(
-      url: Uri.parse(
+      url: WebUri(
         '${snippetWebUrls[widget.lang]}'
         '?price=${widget.price}&currency=${widget.currency.displayName}$sdkQuery',
       ),
       options: ChromeSafariBrowserClassOptions(
-        android: AndroidChromeCustomTabsOptions(
-            shareState: CustomTabsShareState.SHARE_STATE_OFF),
+        android: AndroidChromeCustomTabsOptions(shareState: CustomTabsShareState.SHARE_STATE_OFF),
         ios: IOSSafariOptions(
           presentationStyle: IOSUIModalPresentationStyle.POPOVER,
         ),

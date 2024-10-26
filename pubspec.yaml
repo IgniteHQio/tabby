@@ -14,7 +14,7 @@ dependencies:
   http: ^1.0.0
 
   # Webview
-  flutter_inappwebview: ^5.7.1
+  flutter_inappwebview: ^6.1.5
 
   # UUID
   uuid: ^4.2.1
